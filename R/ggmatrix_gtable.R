@@ -19,7 +19,6 @@
 ggmatrix_gtable <- function(
   pm,
   ...,
-  labeller = "label_value",
   progress = interactive() && (pm$ncol * pm$nrow) > 15,
   progress_format = " plot: [:plot_i,:plot_j] [:bar]:percent est::eta "
 ) {
@@ -36,6 +35,7 @@ ggmatrix_gtable <- function(
     # pb$tick(tokens = list(plot_i = 1, plot_j = 1))
   }
 
+  labeller = pm$labeller
 
   # make a fake facet grid to fill in with proper plot panels
   fake_data <- expand.grid(

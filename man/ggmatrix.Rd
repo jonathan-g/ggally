@@ -9,7 +9,7 @@ ggmatrix(plots, nrow, ncol, xAxisLabels = NULL, yAxisLabels = NULL,
   showStrips = NULL, showAxisPlotLabels = TRUE,
   showXAxisPlotLabels = TRUE, showYAxisPlotLabels = TRUE,
   xProportions = NULL, yProportions = NULL, data = NULL, gg = NULL,
-  legend = NULL)
+  legend = NULL, labeller = "label_value")
 }
 \arguments{
 \item{plots}{list of plots to be put into matrix}

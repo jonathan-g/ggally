@@ -11,7 +11,8 @@ ggpairs(data, mapping = NULL, columns = 1:ncol(data), title = NULL,
   "densityDiag", discrete = "barDiag", na = "naDiag"), params = NULL, ...,
   xlab = NULL, ylab = NULL, axisLabels = c("show", "internal", "none"),
   columnLabels = colnames(data[columns]), showStrips = NULL,
-  legend = NULL, cardinality_threshold = 15, legends = stop("deprecated"))
+  legend = NULL, cardinality_threshold = 15, legends = stop("deprecated"),
+  labeller = "label_value")
 }
 \arguments{
 \item{data}{data set using.  Can have both numerical and categorical data.}
