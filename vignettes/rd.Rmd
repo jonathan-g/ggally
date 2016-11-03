@@ -1,5 +1,5 @@
 ---
-title: "GGally"
+title: "jgally"
 subtitle: "Extension to 'ggplot2'"
 author: "Barret Schloerke"
 copyright: "Barret Schloerke"
@@ -9,7 +9,7 @@ output:
     toc_collapse: true
 redirect: http://ggobi.github.io/ggally/rd.html
 vignette: |
-  %\VignetteIndexEntry{GGally_rd}
+  %\VignetteIndexEntry{jgally_rd}
   %\VignetteEngine{packagedocs::redirect}
 navpills: |
   <li><a href='index.html'>Docs</a></li>

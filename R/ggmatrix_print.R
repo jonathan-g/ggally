@@ -26,8 +26,8 @@ print.ggmatrix <- function (x, newpage = is.null(vp), vp = NULL, ...,
   if (newpage) {
     grid.newpage()
   }
-  grDevices::recordGraphics(requireNamespace("GGally", quietly = TRUE),
-      list(), getNamespace("GGally"))
+  grDevices::recordGraphics(requireNamespace("jgally", quietly = TRUE),
+      list(), getNamespace("jgally"))
   gtable <- ggmatrix_gtable(x, labeller = labeller, ...)
 
   # must be done after gtable, as gtable calls many ggplot2::print.ggplot methods
@@ -55,8 +55,8 @@ print.ggmatrix <- function (x, newpage = is.null(vp), vp = NULL, ...,
 #'
 #' @keywords internal
 #' @examples
-#'  GGally:::is_blank_plot(ggally_blank())
-#'  GGally:::is_blank_plot(ggally_points(mtcars, ggplot2::aes_string(x = "disp", y = "hp")))
+#'  jgally:::is_blank_plot(ggally_blank())
+#'  jgally:::is_blank_plot(ggally_points(mtcars, ggplot2::aes_string(x = "disp", y = "hp")))
 #'
 is_blank_plot <- function(p){
   is.null(p) || identical(p, "blank") || inherits(p, "ggmatrix_blank")

@@ -56,7 +56,7 @@ If a function is supplied as an option, it should implement the function api of 
 }
 \examples{
  # small function to display plots only if it's interactive
- p_ <- GGally::print_if_interactive
+ p_ <- jgally::print_if_interactive
 
  data(baseball, package = "plyr")
 

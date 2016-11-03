@@ -13,7 +13,7 @@
 #' @export
 #' @examples
 #' # Small function to display plots only if it's interactive
-#' p_ <- GGally::print_if_interactive
+#' p_ <- jgally::print_if_interactive
 #' library(chemometrics)
 #' data(NIR)
 #' NIR_sub <- data.frame(NIR$yGlcEtOH, NIR$xNIR[,1:3])

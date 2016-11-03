@@ -1,5 +1,5 @@
 ---
-title: "GGally"
+title: "jgally"
 subtitle: "Extension to 'ggplot2'"
 author: Barret Schloerke
 copyright: Barret Schloerke
@@ -9,7 +9,7 @@ output:
     toc_collapse: true
 redirect: http://ggobi.github.io/ggally
 vignette: >
-  %\VignetteIndexEntry{GGally}
+  %\VignetteIndexEntry{jgally}
   %\VignetteEngine{packagedocs::redirect}
 navpills: |
   <li class="active"><a href='index.html'>Docs</a></li>
@@ -28,15 +28,15 @@ knitr::opts_chunk$set(
   fig.height = 8,
   fig.width = 10
 )
-suppressMessages(suppressWarnings(library(GGally)))
+suppressMessages(suppressWarnings(library(jgally)))
 
 # shorthand for rd_link() - see ?packagedocs::rd_link for more information
 rdl <- function(x) packagedocs::rd_link(deparse(substitute(x)))
 ```
 
-# GGally
+# jgally
 
-Welcome to the GGally documentation page.
+Welcome to the jgally documentation page.
 
 The following topic sections are alphabetically sorted.
 
@@ -56,7 +56,7 @@ The following topic sections are alphabetically sorted.
 
 
 
-# GGally::ggcoef
+# jgally::ggcoef
 
 The purpose of this function is to quickly plot the coefficients of a model.
 
@@ -155,7 +155,7 @@ ggcoef(
 
 
 
-# GGally::ggduo
+# jgally::ggduo
 
 #### *Barret Schloerke*
 #### *July 4, 2016*
@@ -391,7 +391,7 @@ ggduo(
 
 
 
-# GGally::glyphs
+# jgally::glyphs
 
 #### *Hadley Wickham, Charlotte Wickham, Di Cook, Heike Hofmann*
 #### *Nov 6, 2015*
@@ -435,7 +435,7 @@ Rescaling in different ways puts emphasis on different components, see the examp
 
 
 
-# GGally::ggmatrix
+# jgally::ggmatrix
 
 #### *Barret Schloerke*
 #### *Oct 29, 2015*
@@ -621,7 +621,7 @@ pm
 
 
 
-# GGally::ggnetworkmap
+# jgally::ggnetworkmap
 
 #### *Amos Elberg*
 #### *January 10, 2015*
@@ -756,7 +756,7 @@ ggnetworkmap(net = twitter_spambots,
 
 
 
-# GGally::ggnostic
+# jgally::ggnostic
 
 #### *Barret Schloerke*
 #### *Oct 1, 2016*
@@ -891,7 +891,7 @@ ggnostic(
 
 
 
-# GGally::ggpairs
+# jgally::ggpairs
 
 #### *Barret Schloerke*
 #### *Oct 29, 2015*
@@ -926,7 +926,7 @@ pm <- ggpairs(tips, mapping = aes(color = sex), columns = c("total_bill", "time"
 pm
 ```
 
-Since the plots are default plots (or are helper functions from GGally), the aesthetic color is altered to be appropriate.  Looking at the example above, 'tip' vs 'total_bill' (pm[3,1]) needs the `color` aesthetic, while 'time' vs 'total_bill' needs the `fill` aesthetic.  If custom functions are supplied, no aesthetic alterations will be done.
+Since the plots are default plots (or are helper functions from jgally), the aesthetic color is altered to be appropriate.  Looking at the example above, 'tip' vs 'total_bill' (pm[3,1]) needs the `color` aesthetic, while 'time' vs 'total_bill' needs the `fill` aesthetic.  If custom functions are supplied, no aesthetic alterations will be done.
 
 ## Matrix Sections
 
@@ -1083,7 +1083,7 @@ John W Emerson, Walton A Green, Barret Schloerke, Jason Crowley, Dianne Cook, He
 
 
 
-# GGally::ggscatmat
+# jgally::ggscatmat
 
 #### *Di Cook, Mengjia Ni*
 #### *Nov 6, 2015*
@@ -1129,7 +1129,7 @@ John W Emerson, Walton A Green, Barret Schloerke, Jason Crowley, Dianne Cook, He
 
 
 
-# GGally::ggsurv
+# jgally::ggsurv
 
 #### *Edwin Thoen*
 #### *April, 4, 2016*

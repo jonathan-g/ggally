@@ -214,7 +214,7 @@ stop_if_high_cardinality <- function(data, columns, threshold) {
 #' @export
 #' @examples
 #'  # small function to display plots only if it's interactive
-#'  p_ <- GGally::print_if_interactive
+#'  p_ <- jgally::print_if_interactive
 #'
 #'  data(baseball, package = "plyr")
 #'
@@ -625,7 +625,7 @@ ggduo <- function(
 #' @return ggpair object that if called, will print
 #' @examples
 #'  # small function to display plots only if it's interactive
-#'  p_ <- GGally::print_if_interactive
+#'  p_ <- jgally::print_if_interactive
 #'
 #'
 #' ## Quick example, with and without colour
@@ -1001,7 +1001,7 @@ stop_if_params_exist <- function(params) {
       stop(
         "'params' is a deprecated argument.  ",
         "Please 'wrap' the function to supply arguments. ",
-        "help(\"wrap\", package = \"GGally\")"
+        "help(\"wrap\", package = \"jgally\")"
       )
   }
 }

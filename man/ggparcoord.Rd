@@ -104,7 +104,7 @@ in the parallel coordinate plot. Options:
 }
 \examples{
 # small function to display plots only if it's interactive
-p_ <- GGally::print_if_interactive
+p_ <- jgally::print_if_interactive
 
 # use sample of the diamonds data for illustrative purposes
 data(diamonds, package="ggplot2")

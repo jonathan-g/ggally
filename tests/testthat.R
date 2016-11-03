@@ -1,4 +1,4 @@
 library(testthat)
-library(GGally)
+library(jgally)
 
-test_check("GGally")
+test_check("jgally")

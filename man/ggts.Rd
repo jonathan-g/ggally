@@ -15,7 +15,7 @@ ggts(..., columnLabelsX = NULL)
 ggmatrix object
 }
 \description{
-GGally implementation of ts.plot. Wraps around the ggduo function and removes the column strips
+jgally implementation of ts.plot. Wraps around the ggduo function and removes the column strips
 }
 \examples{
 ggts(pigs, "time", c("gilts", "profit", "s_per_herdsz", "production", "herdsz"))

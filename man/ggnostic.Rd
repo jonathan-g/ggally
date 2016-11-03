@@ -65,7 +65,7 @@ Similar to \code{\link{ggduo}} and \code{\link{ggpairs}}, functions may be suppl
 }
 \examples{
 # small function to display plots only if it's interactive
-p_ <- GGally::print_if_interactive
+p_ <- jgally::print_if_interactive
 data(mtcars)
 
 # use mtcars dataset and alter the 'am' column to display actual name values

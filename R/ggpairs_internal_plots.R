@@ -94,7 +94,7 @@ wrap_fn_with_param_arg <- function(
         funcVal <- get(
           str_c("ggally_", funcVal),
           mode = "function",
-          envir = loadNamespace("GGally")
+          envir = loadNamespace("jgally")
         )
       },
       error = function(e) {

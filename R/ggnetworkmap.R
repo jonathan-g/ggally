@@ -43,7 +43,7 @@ if(getRversion() >= "2.15.1") {
 #' @importFrom utils installed.packages
 #' @examples
 #' # small function to display plots only if it's interactive
-#' p_ <- GGally::print_if_interactive
+#' p_ <- jgally::print_if_interactive
 #'
 #' invisible(lapply(c("ggplot2", "maps", "network", "sna"), base::library, character.only = TRUE))
 #'

@@ -43,7 +43,7 @@ Now that the print.ggmatrix method uses a large gtable object, rather than print
 }
 \examples{
 # small function to display plots only if it's interactive
-p_ <- GGally::print_if_interactive
+p_ <- jgally::print_if_interactive
 
 plotList <- list()
 for (i in 1:6) {

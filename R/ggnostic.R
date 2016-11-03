@@ -531,7 +531,7 @@ check_and_set_nostic_types <- function(
 #' @export
 #' @examples
 #' # small function to display plots only if it's interactive
-#' p_ <- GGally::print_if_interactive
+#' p_ <- jgally::print_if_interactive
 #' data(mtcars)
 #'
 #' # use mtcars dataset and alter the 'am' column to display actual name values
@@ -667,7 +667,7 @@ ggnostic <- function(
 # https://github.com/ggobi/ggobi/blob/master/data/pigs.xml
 #' Multiple Time Series
 #'
-#' GGally implementation of ts.plot. Wraps around the ggduo function and removes the column strips
+#' jgally implementation of ts.plot. Wraps around the ggduo function and removes the column strips
 #' @param ... supplied directly to \code{\link{ggduo}}
 #' @param columnLabelsX remove top strips for the X axis by default
 #' @return ggmatrix object

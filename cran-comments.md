@@ -39,7 +39,7 @@ Barret
 
 
 ## Reverse dependencies
-I have run R CMD check on downstream dependencies of GGally on my local machine.
+I have run R CMD check on downstream dependencies of jgally on my local machine.
 * Summary - https://github.com/ggobi/ggally/blob/master/revdep/README.md
 
 ### RevDep Notes
@@ -49,10 +49,10 @@ I have run R CMD check on downstream dependencies of GGally on my local machine.
 * In contact with author and have resolved issues.
   * plotly: checking examples ... ERROR
 
-* Does not appear to be a GGally issue.
+* Does not appear to be a jgally issue.
   * ParamHelpers: checking tests ... ERROR
   * SHELF: checking re-building of vignette outputs ... WARNING
 
-* Does not appear to be a GGally issue. Seems like ggplot2 issue
+* Does not appear to be a jgally issue. Seems like ggplot2 issue
   * robustbase: checking re-building of vignette outputs ... WARNING
   * vdmR: checking examples ... ERROR
