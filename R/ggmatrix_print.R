@@ -18,13 +18,17 @@ ggplot2_set_last_plot <- utils::getFromNamespace("set_last_plot", "ggplot2")
 #'  data(tips, package = "reshape")
 #'  pMat <- ggpairs(tips, c(1,3,2), mapping = ggplot2::aes_string(color = "sex"))
 #'  pMat # calls print(pMat), which calls print.ggmatrix(pMat)
-print.ggmatrix <- function (x, newpage = is.null(vp), vp = NULL, ...) {
+print.ggmatrix <- function (x, newpage = is.null(vp), vp = NULL, ...,
+                            labeller = NULL) {
+  if (is.null(labeller)) {
+    labeller <- 'label_value'
+  }
   if (newpage) {
     grid.newpage()
   }
   grDevices::recordGraphics(requireNamespace("GGally", quietly = TRUE),
       list(), getNamespace("GGally"))
-  gtable <- ggmatrix_gtable(x, ...)
+  gtable <- ggmatrix_gtable(x, labeller = labeller, ...)
 
   # must be done after gtable, as gtable calls many ggplot2::print.ggplot methods
   ggplot2_set_last_plot(x)

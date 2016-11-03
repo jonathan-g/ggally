@@ -49,7 +49,8 @@ ggfacet <- function(
   xlab = NULL,
   ylab = NULL,
   title = NULL,
-  scales = "free"
+  scales = "free",
+  parse_labels = FALSE
 ) {
 
   data <- fix_data(data)
@@ -121,6 +122,10 @@ ggfacet <- function(
     if (".y_col" %in% val_names) {
       vals[[".y_col"]] <- columnLabelsY[as.character(vals[[".y_col"]])]
     }
+    if (parse_labels) vals <- lapply(vals, function(v) {
+      v <- paste0("list(", v, ")")
+      lapply(v, function(expr) c(parse(text = expr)))
+    })
     vals
   }
   p <- fn(tall_data, mapping, ...) +

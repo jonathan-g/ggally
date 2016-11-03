@@ -8,7 +8,7 @@ ggfacet(data, mapping = NULL, columnsX = 1:ncol(data),
   columnsY = 1:ncol(data), fn = ggally_points, ...,
   columnLabelsX = names(data[columnsX]),
   columnLabelsY = names(data[columnsY]), xlab = NULL, ylab = NULL,
-  title = NULL, scales = "free")
+  title = NULL, scales = "free", parse_labels = FALSE)
 }
 \arguments{
 \item{data}{data.frame that contains all columns to be displayed.  This data will be melted before being passed into the function \code{fn}}

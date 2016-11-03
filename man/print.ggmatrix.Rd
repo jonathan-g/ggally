@@ -4,7 +4,8 @@
 \alias{print.ggmatrix}
 \title{Print ggpair object}
 \usage{
-\method{print}{ggmatrix}(x, newpage = is.null(vp), vp = NULL, ...)
+\method{print}{ggmatrix}(x, newpage = is.null(vp), vp = NULL, ...,
+  labeller = NULL)
 }
 \arguments{
 \item{x}{plot to display}

@@ -19,6 +19,7 @@
 ggmatrix_gtable <- function(
   pm,
   ...,
+  labeller = "label_value",
   progress = interactive() && (pm$ncol * pm$nrow) > 15,
   progress_format = " plot: [:plot_i,:plot_j] [:bar]:percent est::eta "
 ) {
@@ -47,7 +48,7 @@ ggmatrix_gtable <- function(
   # make the smallest plot possible so the guts may be replaced
   pm_fake <- ggplot(fake_data, mapping = aes_("x", "y")) +
     geom_point() +
-    facet_grid(Var2 ~ Var1) + # make the 'fake' strips for x and y titles
+    facet_grid(Var2 ~ Var1, labeller = labeller) + # make the 'fake' strips for x and y titles
     labs(x = pm$xlab, y = pm$ylab) # remove both x and y titles
 
   # add all custom ggplot2 things
