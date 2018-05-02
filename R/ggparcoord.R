@@ -249,6 +249,17 @@ ggparcoord <- function(
     stop("invalid value for 'boxplot'; must be a logical operator")
   }
 
+  if (!is.null(shadeBox) && length(shadeBox) != 1) {
+    stop("invalid value for 'shadeBox'; must be a single color")
+  } else {
+    valid_color <- tryCatch(is.matrix(grDevices::col2rgb(shadeBox)),
+                            error = function(e) FALSE)
+
+    if (!valid_color) {
+      stop("invalid value for 'shadeBox'; must be a valid R color")
+    }
+  }
+
   if (is.logical(splineFactor)) {
     if (splineFactor) {
       splineFactor <- 3
@@ -491,11 +502,19 @@ ggparcoord <- function(
 
   if (!is.null(shadeBox)) {
     # Fix so that if missing = "min10", the box only goes down to the true min
-    d.sum <- ddply(data.m, .(variable), summarize,
+    d.sum <- ddply(data.m, c("variable"), summarize,
       min = min(value),
       max = max(value))
-    p <- p + geom_linerange(data = d.sum, size = I(10), col = shadeBox,
-      mapping = aes(y = NULL, ymin = min, ymax = max, group = variable))
+    p <- p + geom_linerange(
+        data = d.sum, size = I(10), col = shadeBox,
+        inherit.aes = FALSE,
+        mapping = aes_string(
+          x = "variable",
+          ymin = "min",
+          ymax = "max",
+          group = "variable"
+        )
+      )
   }
 
   if (boxplot) {

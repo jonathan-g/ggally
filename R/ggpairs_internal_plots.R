@@ -3,7 +3,7 @@
 #'
 #' Wraps a function with the supplied parameters to force different default behavior.  This is useful for functions that are supplied to ggpairs.  It allows you to change the behavior of one function, rather than creating multiple functions with different parameter settings.
 #'
-#' \code{wrap} is identical to \code{wrap_fn_with_params}.  These function take the new parameters as arguements.
+#' \code{wrap} is identical to \code{wrap_fn_with_params}.  These function take the new parameters as arguments.
 #'
 #' \code{wrapp} is identical to \code{wrap_fn_with_param_arg}.  These functions take the new parameters as a single list.
 #'
@@ -13,10 +13,13 @@
 #' @param ... named parameters to be supplied to \code{wrap_fn_with_param_arg}
 #' @param params named vector or list of parameters to be applied to the \code{funcVal}
 #' @param funcArgName name of function to be displayed
-#' @return a \code{function(data, mapping, ...)\{\}} that will wrap the original function with the parameters applied as arguements
+#' @return a \code{function(data, mapping, ...)\{\}} that will wrap the original function with the parameters applied as arguments
 #' @export
 #' @rdname wrap
 #' @examples
+#'  # small function to display plots only if it's interactive
+#'  p_ <- GGally::print_if_interactive
+#'
 #' # example function that prints 'val'
 #' fn <- function(data, mapping, val = 2) {
 #'   print(val)
@@ -35,24 +38,29 @@
 #'
 #' # change parameter settings in ggpairs for a particular function
 #' ## Goal output:
-#' (regularPlot <- ggally_points(
+#' regularPlot <- ggally_points(
 #'   iris,
 #'   ggplot2::aes(Sepal.Length, Sepal.Width),
 #'   size = 5, color = "red"
-#' ))
+#' )
+#' p_(regularPlot)
+#'
 #' # Wrap ggally_points to have parameter values size = 5 and color = 'red'
 #' w_ggally_points <- wrap(ggally_points, size = 5, color = "red")
-#' (wrappedPlot <- w_ggally_points(
+#' wrappedPlot <- w_ggally_points(
 #'   iris,
 #'   ggplot2::aes(Sepal.Length, Sepal.Width)
-#' ))
+#' )
+#' p_(wrappedPlot)
 #'
 #' # Double check the aes parameters are the same for the geom_point layer
 #' identical(regularPlot$layers[[1]]$aes_params, wrappedPlot$layers[[1]]$aes_params)
 #'
 #' # Use a wrapped function in ggpairs
-#' ggpairs(iris, 1:3, lower = list(continuous = wrap(ggally_points, size = 5, color = "red")))
-#' ggpairs(iris, 1:3, lower = list(continuous = w_ggally_points))
+#' pm <- ggpairs(iris, 1:3, lower = list(continuous = wrap(ggally_points, size = 5, color = "red")))
+#' p_(pm)
+#' pm <- ggpairs(iris, 1:3, lower = list(continuous = w_ggally_points))
+#' p_(pm)
 wrap_fn_with_param_arg <- function(
   funcVal,
   params = NULL,
@@ -99,7 +107,7 @@ wrap_fn_with_param_arg <- function(
       },
       error = function(e) {
         stop(str_c(
-"The following ggpair plot functions are readily available: \n",
+"The following ggpairs plot functions are readily available: \n",
 "\tcontinuous: c('points', 'smooth', 'smooth_loess', 'density', 'cor', 'blank')\n",
 "\tcombo: c('box', 'box_no_facet', 'dot', 'dot_no_facet', 'facethist',",
   " 'facetdensity', 'denstrip', 'blank')\n",
@@ -166,10 +174,10 @@ wrap  <- function(funcVal, ..., funcArgName = deparse(substitute(funcVal))) {
   params <- list(...)
   if (length(params) > 0) {
     if (is.null(names(params))) {
-      stop("all parameters must be named arguements")
+      stop("all parameters must be named arguments")
     }
     if (any(nchar(names(params)) == 0)) {
-      stop("all parameters must be named arguements")
+      stop("all parameters must be named arguments")
     }
   }
   wrap_fn_with_param_arg(funcVal, params = params, funcArgName = funcArgName)

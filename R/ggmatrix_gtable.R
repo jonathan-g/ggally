@@ -1,10 +1,10 @@
 
 
-#' Print ggpair object
+#' Print ggmatrix object
 #'
-#' Specialized method to print the ggpair object-
+#' Specialized method to print the ggmatrix object-
 #'
-#' @param pm ggpair object to be plotted
+#' @param pm ggmatrix object to be plotted
 #' @param ... ignored
 #' @param progress boolean to determine if a progress bar should be displayed. This defaults to interactive sessions only
 #' @param progress_format string supplied directly to \code{progress::\link[progress]{progress_bar}(format = progress_format)}. Defaults to display the plot number, progress bar, percent complete, and estimated time to finish.
@@ -38,9 +38,16 @@ ggmatrix_gtable <- function(
   labeller = pm$labeller
 
   # make a fake facet grid to fill in with proper plot panels
+  get_labels <- function(labels, length_out, name) {
+    if (is.expression(labels)) {
+      stop("'", name, "' can only be a character vector or NULL.",
+      "  Character values can be parsed using the 'labeller' parameter.")
+    }
+    ifnull(labels, as.character(seq_len(length_out)))
+  }
   fake_data <- expand.grid(
-    Var1 = ifnull(pm$xAxisLabels, as.character(seq_len(pm$ncol))),
-    Var2 = ifnull(pm$yAxisLabels, as.character(seq_len(pm$nrow)))
+    Var1 = get_labels(pm$xAxisLabels, pm$ncol, "xAxisLabels"),
+    Var2 = get_labels(pm$yAxisLabels, pm$nrow, "yAxisLabels")
   )
   fake_data$x <- 1
   fake_data$y <- 1
@@ -48,8 +55,10 @@ ggmatrix_gtable <- function(
   # make the smallest plot possible so the guts may be replaced
   pm_fake <- ggplot(fake_data, mapping = aes_("x", "y")) +
     geom_point() +
-    facet_grid(Var2 ~ Var1, labeller = labeller) + # make the 'fake' strips for x and y titles
-    labs(x = pm$xlab, y = pm$ylab) # remove both x and y titles
+    # make the 'fake' strips for x and y titles
+    facet_grid(Var2 ~ Var1, labeller = ifnull(pm$labeller, "label_value"), switch = pm$switch) +
+    # remove both x and y titles
+    labs(x = pm$xlab, y = pm$ylab)
 
   # add all custom ggplot2 things
   pm_fake <- add_gg_info(pm_fake, pm$gg)

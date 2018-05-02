@@ -7,7 +7,7 @@
 add_and_overwrite_aes(current, new)
 }
 \value{
-aes_string output
+aes_ output
 }
 \description{
 Add new aesthetics to a previous aes.
@@ -28,4 +28,3 @@ str(pm)
 Barret Schloerke \email{schloerke@gmail.com}
 }
 \keyword{internal}
-
