@@ -1,58 +1,75 @@
 
 ## Comments
 
-### 2016-11-04
-Linux has a NOTE on mis-spelled words, it is a false positive.
+### 2017-8-2
 
-All revdep authors were emailed on 2016-10-17. Have only been in contact with the authors of 'plotly' about changes.
+No revdep authors were emailed as it is only small bug fixes or 'Suggest' dependency change for Brian.
 
-Thank you for your time.
+Please let me know if there is anything I can do.  Thank you for your time.
 
 Best,
 Barret
 
 
+### 2017-7-18
+
+As §1.1.3.1 of the manual told you, packages in Suggests: should be used
+conditionally.  The latest version of igraph will not install on Solaris
+(hence packages strictly depending on it), and as you can see from its
+CRAN checks page, your package now fails its check.
+
+Please correct ASAP and definitely within a month.
+
+--
+Brian D. Ripley,
+
+
+
 #### Test environments and R CMD check results
 
-* local OS X install (x86_64-apple-darwin13.4.0), R 3.3.0
-  * There were no ERRORs or WARNINGs.
-  * There is one NOTE.
-    * checking CRAN incoming feasibility ... NOTE
-    Maintainer: ‘Barret Schloerke <schloerke@gmail.com>’
-* travis-ci
-  * Platform: x86_64-pc-linux-gnu (64-bit)
-  * Running under: Ubuntu precise (12.04.5 LTS)
-  * R
-    * version 3.3.1 (2016-06-21)
-    * R Under development (unstable) (2016-10-17 r71530)
-  * There were no ERRORs, WARNINGs, or NOTEs.
-* win-builder (devel and release)
-  * There were no ERRORs or WARNINGs.  
-  * There are one NOTE.
-    * checking CRAN incoming feasibility ... NOTE
-      Maintainer: 'Barret Schloerke <schloerke@gmail.com>'
+* local OS X install
+  * R version 3.4.1 (2017-06-30)
+    Platform: x86_64-apple-darwin15.6.0 (64-bit)
+    Running under: macOS Sierra 10.12.5
+    * 0 errors | 0 warnings | 0 notes
 
-      Possibly mis-spelled words in DESCRIPTION:
-        geoms (25:43)
-        ggplot (5:21)
-        scatterplot (26:49)
+* travis-ci
+  * R version 3.4.1 (2017-06-30)
+    Platform: x86_64-pc-linux-gnu (64-bit)
+    Running under: Ubuntu precise (12.04.5 LTS)
+    * 0 errors | 0 warnings | 0 notes
+
+  * R Under development (unstable) (2017-08-01 r73010)
+    Platform: x86_64-pc-linux-gnu (64-bit)
+    Running under: Ubuntu precise (12.04.5 LTS)
+    * 0 errors | 0 warnings | 0 notes
+
+* win-builder (devel and release)
+  * R version 3.4.1 (2017-06-30)
+    * 0 errors | 0 warnings | 0 notes
+  * R Under development (unstable) (2017-07-31 r73003)
+    * 0 errors | 0 warnings | 0 notes
 
 
 ## Reverse dependencies
-I have run R CMD check on downstream dependencies of GGally on my local machine.
-* Summary - https://github.com/ggobi/ggally/blob/master/revdep/README.md
 
-### RevDep Notes
+Checked on
+  * R version 3.4.1 (2017-06-30)
+    Platform: x86_64-apple-darwin15.6.0 (64-bit)
+    Running under: macOS Sierra 10.12.5
 
-* Failed to install dependencies for: MissingDataGUI, specmine, toaster, userfriendlyscience
+No difference in test results due to GGally upgrade: <https://github.com/ggobi/ggally/blob/master/revdep/problem-diff.txt>
 
-* In contact with author and have resolved issues.
-  * plotly: checking examples ... ERROR
 
-* Does not appear to be a GGally issue.
-  * ParamHelpers: checking tests ... ERROR
-  * SHELF: checking re-building of vignette outputs ... WARNING
+Errors not related to GGally upgrade:
 
-* Does not appear to be a GGally issue. Seems like ggplot2 issue
-  * robustbase: checking re-building of vignette outputs ... WARNING
-  * vdmR: checking examples ... ERROR
+|package        |version | errors| warnings| notes|
+|:--------------|:-------|------:|--------:|-----:|
+|eechidna       |1.1     |      0|        1|     1| - vignette building
+|nzelect        |0.3.3   |      0|        1|     0| - vignette building
+|PopGenReport   |3.0.0   |      0|        1|     1| - due to missing package dependencies
+|POUMM          |1.3.2   |      1|        0|     0| - can not install source package
+|MissingDataGUI |0.2-5   |      1|        0|     0| - can not install dependencies
+|specmine       |1.0     |      1|        0|     0| - can not install dependencies
+
+* Side note, package 'Pi' took over 4 hours to check.

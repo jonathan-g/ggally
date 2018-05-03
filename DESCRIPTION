@@ -1,5 +1,5 @@
 Package: GGally
-Version: 1.2.9.9999
+Version: 1.3.2
 License: GPL (>= 2.0)
 Title: Extension to 'ggplot2'
 Type: Package
@@ -8,7 +8,7 @@ LazyData: true
 URL: https://ggobi.github.io/ggally, https://github.com/ggobi/ggally
 BugReports: https://github.com/ggobi/ggally/issues
 Authors@R: c(
-    person("Barret", "Schloerke", role = c("aut", "cre"), email = "schloerke@gmail.com", comment = "author for ggpairs, ggduo, and ggally_*.  contributor for all functions."),
+    person("Barret", "Schloerke", role = c("aut", "cre"), email = "schloerke@gmail.com", comment = "author for ggpairs, ggduo, ggnostic, ggts, ggfacet, and ggally_*.  Contributor for all functions."),
     person("Jason", "Crowley", role = "aut", email = "crowley.jason.s@gmail.com", comment = "ggparcoord"),
     person("Di", "Cook", role = c("aut", "ths"), email = "dicook@monash.edu", comment = "ggscatmat, gglyph"),
     person("Heike", "Hofmann", role = "ths", email = "hofmann@iastate.edu"),
@@ -28,7 +28,8 @@ Description:
 Depends:
     R (>= 3.1)
 Imports:
-    ggplot2 (> 2.1.0),
+    ggplot2 (>= 2.2.0),
+    grDevices,
     grid,
     gtable (>= 0.2.0),
     plyr (>= 1.8.3),
@@ -49,14 +50,10 @@ Suggests:
     scales (>= 0.4.0),
     sna (>= 2.3-2),
     survival,
-    packagedocs,
-    knitr,
+    packagedocs (>= 0.4.0),
     rmarkdown,
     roxygen2,
     testthat
-Remotes:
-  hafen/packagedocs,
-  hadley/ggplot2
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 VignetteBuilder: packagedocs

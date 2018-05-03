@@ -1,4 +1,49 @@
-GGally 1.2.9.9999
+GGally 1.3.2
+-----------------
+
+`ggpairs` and `ggduo`
+
+* Removed warning where pure numeric names gave a warning (#238, @lepennec)
+* Fixed ordering issue with horizontal boxplots (#239)
+
+`ggparcoord`
+
+* Fixed missing `x` aes requirement when shadebox is provided (#237, @treysp)
+
+Package
+
+* Made igraph a non required dependency for tests (#240)
+
+
+GGally 1.3.1
+-----------------
+
+Added new dataset `psychademic`
+
+* See `?psychademic` for more details
+* (And updated the broken UCLA links)
+
+Added original ggmatrix theme
+
+* added function to set theme to have clear strip background and rearrange the strip positions
+* added parameter `switch` to ggmatrix (and friends) to allow for strip repositioning.  See `?ggplot::facet_grid` for more documentation on `switch` (#223, #224)
+
+`ggsurv` error reporting
+
+* removed a one error check that is covered in other places (#222)
+
+`+.gg`
+
+* allow to add a list of items to a ggmatrix (#228)
+
+`ggmatrix.print`
+
+* fix strip issues with ggplot2 name update
+
+
+
+
+GGally 1.3.0
 -----------------
 
 `ggmatrix.print` - massive update!
@@ -27,6 +72,19 @@ GGally 1.2.9.9999
 
 * Produces single ggplot2 object
 * interface is very similar to `ggduo` and `ggpairs`
+
+
+`fn_switch` - New function!
+
+* Provide many functions in a list but only call one function at run time according to a mapping value
+* Useful for `ggnostic` for different behavior depending on the y variable
+* Allows for a 'default' value for the default switch case
+
+
+`ggmatrix` - allow custom labellers for facet labels
+
+* Added labeller parameter which is supplied to `ggplot2::facet_grid()`
+* Allows for labels with plotmath expressions
 
 
 `ggmatrix` and `ggplot2::last_plot()`
