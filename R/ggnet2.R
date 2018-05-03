@@ -775,8 +775,8 @@ ggnet2 <- function(
 
   }
 
-  xy$x = scale(xy$x, min(xy$x), diff(range(xy$x)))
-  xy$y = scale(xy$y, min(xy$y), diff(range(xy$y)))
+  xy$x = as.vector(scale(xy$x, min(xy$x), diff(range(xy$x))))
+  xy$y = as.vector(scale(xy$y, min(xy$y), diff(range(xy$y))))
 
   data = cbind(data, xy)
 

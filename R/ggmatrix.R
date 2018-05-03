@@ -69,8 +69,7 @@ ggmatrix <- function(
   yProportions = NULL,
   data = NULL,
   gg = NULL,
-  legend = NULL,
-  labeller = 'label_value'
+  legend = NULL
 ) {
 
   if (!is.list(plots)) {
@@ -103,8 +102,7 @@ ggmatrix <- function(
     gg = gg,
     nrow = nrow,
     ncol = ncol,
-    byrow = byrow,
-    labeller = labeller
+    byrow = byrow
   )
 
   attributes(plotMatrix)$class <- c("gg", "ggmatrix")

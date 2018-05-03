@@ -739,8 +739,7 @@ ggpairs <- function(
   showStrips = NULL,
   legend = NULL,
   cardinality_threshold = 15,
-  legends = stop("deprecated"),
-  labeller = 'label_value'
+  legends = stop("deprecated")
 ){
 
   warn_deprecated(!missing(legends), "legends")
@@ -843,8 +842,7 @@ ggpairs <- function(
     ylab = ylab,
     data = data_,
     gg = NULL,
-    legend = legend,
-    labeller = labeller
+    legend = legend
   )
 
   plotMatrix

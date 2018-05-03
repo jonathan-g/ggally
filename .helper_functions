@@ -58,7 +58,7 @@ reverse_depends:
     devtools::revdep_check_save_summary()
     devtools::revdep_check_print_problems()
   }
-  install.packages("GGally")
+  devtools::install_github("jonathan-g/jgally@jgally")
   do_check()
   file.rename("revdep/problems.md", "revdep/problems-cran.md")
   load_all()

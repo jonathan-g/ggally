@@ -10,9 +10,9 @@ ggpairs(data, mapping = NULL, columns = 1:ncol(data), title = NULL,
   "facethist", discrete = "facetbar", na = "na"), diag = list(continuous =
   "densityDiag", discrete = "barDiag", na = "naDiag"), params = NULL, ...,
   xlab = NULL, ylab = NULL, axisLabels = c("show", "internal", "none"),
-  columnLabels = colnames(data[columns]), showStrips = NULL,
-  legend = NULL, cardinality_threshold = 15, legends = stop("deprecated"),
-  labeller = "label_value")
+  columnLabels = colnames(data[columns]), labeller = "label_value",
+  switch = NULL, showStrips = NULL, legend = NULL,
+  cardinality_threshold = 15, legends = stop("deprecated"))
 }
 \arguments{
 \item{data}{data set using.  Can have both numerical and categorical data.}

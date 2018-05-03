@@ -10,6 +10,7 @@
 #' @param columnLabelsX,columnLabelsY column and row labels to display in the plot matrix
 #' @param xlab,ylab,title plot matrix labels
 #' @param scales parameter supplied to \code{ggplot2::\link[ggplot2]{facet_grid}}. Default behavior is \code{"free"}
+#' @param parse_labels Parse labels (to handle mathematical formulas), or treat them as literal strings?
 #' @export
 #' @examples
 #' # Small function to display plots only if it's interactive

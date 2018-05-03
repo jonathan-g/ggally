@@ -53,14 +53,14 @@ Brian D. Ripley,
 
 ## Reverse dependencies
 I have run R CMD check on downstream dependencies of jgally on my local machine.
-* Summary - https://github.com/ggobi/ggally/blob/master/revdep/README.md
+* Summary - https://github.com/jonathan-g/jgally/blob/jgally/revdep/README.md
 
 Checked on
   * R version 3.4.1 (2017-06-30)
     Platform: x86_64-apple-darwin15.6.0 (64-bit)
     Running under: macOS Sierra 10.12.5
 
-No difference in test results due to GGally upgrade: <https://github.com/ggobi/ggally/blob/master/revdep/problem-diff.txt>
+No difference in test results due to jgally upgrade: <https://github.com/jonathan-g/jgally/blob/jgally/revdep/problem-diff.txt>
 
 
 * Does not appear to be a jgally issue.

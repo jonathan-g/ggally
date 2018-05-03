@@ -217,7 +217,7 @@ ggnet <- function(
   if (!identical(names, c("", ""))) {
     warning("names is deprecated; please use group.legend and size.legend instead")
     group.legend = names[1]
-    size.legend  = names[2]
+    legend.size  = names[2]
   }
 
   if (isTRUE(quantize.weights)) {
@@ -563,8 +563,8 @@ ggnet <- function(
 
   }
 
-  xy$x = scale(xy$x, min(xy$x), diff(range(xy$x)))
-  xy$y = scale(xy$y, min(xy$y), diff(range(xy$y)))
+  xy$x = as.vector(scale(xy$x, min(xy$x), diff(range(xy$x))))
+  xy$y = as.vector(scale(xy$y, min(xy$y), diff(range(xy$y))))
 
   data = cbind(data, xy)
 

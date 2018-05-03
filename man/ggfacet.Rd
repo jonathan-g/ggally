@@ -28,6 +28,8 @@ ggfacet(data, mapping = NULL, columnsX = 1:ncol(data),
 \item{xlab, ylab, title}{plot matrix labels}
 
 \item{scales}{parameter supplied to \code{ggplot2::\link[ggplot2]{facet_grid}}. Default behavior is \code{"free"}}
+
+\item{parse_labels}{Parse labels (to handle mathematical formulas), or treat them as literal strings?}
 }
 \description{
 ggfacet - single ggplot2 plot matrix with facet_grid
